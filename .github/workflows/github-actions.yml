@@ -1,7 +1,9 @@
 name: Deployment
 on:
   push:
-      branches: [ CICD ]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   
   workflow_dispatch:
     

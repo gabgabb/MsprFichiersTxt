@@ -25,6 +25,8 @@ jobs:
           
       - name: Check out repository code
         uses: actions/checkout@v2
+        with: 
+          repository: Romain857/MsprJava
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: List files in the repository
         run: |
@@ -34,6 +36,8 @@ jobs:
         with: 
           distribution: 'temurin'
           java-version: '17'
+      - name: Execution
+        working-directory: ./src/main/java
       - run: javac listeAgents.java
       - run: java listeAgents
       - run: echo "🍏 This job's status is ${{ job.status }}."

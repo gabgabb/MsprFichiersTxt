@@ -37,13 +37,15 @@ jobs:
         with: 
           distribution: 'temurin'
           java-version: '17'
-      - name: Execution
-        working-directory: ./src/main/java
-        run: |
-          javac listeAgents.java
-          java listeAgents
+          
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       
+      - name: Execution
+        run:  mvn install clean compile package
+        working-directory: ./build
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."

@@ -29,7 +29,6 @@ jobs:
         run:  mvn install clean compile package
       - name: List built files
         run: | 
-          ls
           tar -cvf build.tar -C build . 
           ls
         
@@ -51,7 +50,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            ls
             sudo bash untar.sh
             
       

@@ -39,7 +39,7 @@ jobs:
         run:  mvn install clean compile package
       - name: List built files
         run: | 
-          tar -cvf build.tar.gz -C build . 
+          tar -cvf /tmp/build.tar.gz -C build . 
           ls
         
       - name: transfer files to remote server
@@ -49,6 +49,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: build.tar.gz
+          source: /tmp/build.tar.gz
           target: /var/www/html
       - run: echo "🍏 This job's status is ${{ job.status }}."

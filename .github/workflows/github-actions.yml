@@ -10,17 +10,7 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-      - name: SSH Remote Commands
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: |
-            whoami
-            ls -a
-          
+                
       - name: Check out repository code
         uses: actions/checkout@v2
         with: 
@@ -51,6 +41,17 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: build.tar.gz
-          target: test
+          target: deployment
+        
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            whoami
+            ls -a
       
       - run: echo "🍏 This job's status is ${{ job.status }}."

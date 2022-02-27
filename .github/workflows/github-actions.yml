@@ -38,6 +38,17 @@ jobs:
       - name: Execution
         run:  mvn install clean compile package
       - name: List built files
-        working-directory: ./build
-        run: ls
+        run: | 
+          tar -cvf build.tar.gz -C build . 
+          ls
+        
+      - name: transfer files to remote server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: build.tar.gz
+          target: /var/www/html
       - run: echo "🍏 This job's status is ${{ job.status }}."

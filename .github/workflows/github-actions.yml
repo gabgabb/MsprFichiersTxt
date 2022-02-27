@@ -28,7 +28,6 @@ jobs:
       - name: Execution
         run:  |
           mvn install clean compile package
-          mvn exec:java -Dexec.mainClass="org.example" 
       - name: List built files
         run: | 
           tar -cvf build.tar -C build . 

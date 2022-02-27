@@ -53,6 +53,6 @@ jobs:
           script: |
             ls
             sudo cp deployment/build.tar /var/www/html
-            sudo tar -xvf var/www/html//build.tar
+            sudo tar -xvf var/www/html/build.tar
       
       - run: echo "🍏 This job's status is ${{ job.status }}."

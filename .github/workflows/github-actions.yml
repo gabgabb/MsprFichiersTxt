@@ -39,6 +39,7 @@ jobs:
         run:  mvn install clean compile package
       - name: List built files
         run: | 
+          ls
           tar -cvf /tmp/build.tar.gz -C build . 
           ls
         

@@ -51,12 +51,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
             ls
-      - name: untaring and moving files
-        working-directory: deployment
-        run: |
-          ls
-          sudo tar -xvf deployment/build.tar
+            sudo cp deployment/build.tar /var/www/html
+            sudo tar -xvf var/wwwhtml//build.tar
       
       - run: echo "🍏 This job's status is ${{ job.status }}."

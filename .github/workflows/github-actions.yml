@@ -56,5 +56,6 @@ jobs:
       - name: untaring and moving files
         run: |
           sudo cp deployment/build.tar /var/www/html
+          sudo tar -xvf build.tar
       
       - run: echo "🍏 This job's status is ${{ job.status }}."

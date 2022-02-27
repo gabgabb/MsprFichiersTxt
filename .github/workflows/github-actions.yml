@@ -52,4 +52,9 @@ jobs:
           port: ${{ secrets.PORT }}
           source: /tmp/build.tar.gz
           target: /var/www/html
+      
+      - name: List temp files
+        working-directory: /tmp
+        run: | 
+          ls
       - run: echo "🍏 This job's status is ${{ job.status }}."

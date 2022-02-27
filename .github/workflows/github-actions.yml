@@ -52,6 +52,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             ls
-            bash untar.sh
+            sudo bash untar.sh
       
       - run: echo "🍏 This job's status is ${{ job.status }}."

@@ -52,7 +52,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             ls
-            sudo cp deployment/build.tar /var/www/html
-            sudo tar -xvf var/www/html/build.tar
+            bash untar.sh
       
       - run: echo "🍏 This job's status is ${{ job.status }}."

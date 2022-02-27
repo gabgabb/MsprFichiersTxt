@@ -33,13 +33,11 @@ jobs:
           java-version: '17'
           
       - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+        run: ls
       
       - name: Execution
         run:  mvn install clean compile package
-      - name: List files in the repository
+      - name: List built files
         working-directory: ./build
-        run: |
-          ls ${{ github.workspace }}
+        run: ls
       - run: echo "🍏 This job's status is ${{ job.status }}."

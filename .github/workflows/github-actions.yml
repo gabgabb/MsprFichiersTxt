@@ -54,7 +54,7 @@ jobs:
             whoami
             ls
       - name: untaring and moving files
-        working-directory: ./deployment
+        working-directory: deployment
         run: |
           ls
           sudo tar -xvf deployment/build.tar

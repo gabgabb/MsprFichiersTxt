@@ -51,6 +51,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: build.tar.gz
-          target: /var/www/html
+          target: test
       
       - run: echo "🍏 This job's status is ${{ job.status }}."

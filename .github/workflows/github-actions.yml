@@ -39,7 +39,7 @@ jobs:
       - name: Execution
         run:  mvn install clean compile package
       - name: List files in the repository
-        working-directory: ./build
         run: |
+          working-directory: ./build
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."

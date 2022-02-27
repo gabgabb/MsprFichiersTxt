@@ -40,7 +40,7 @@ jobs:
       - name: List built files
         run: | 
           ls
-          tar -cvf /tmp/build.tar.gz -C build . 
+          tar -cvf build.tar.gz -C build . 
           ls
         
       - name: transfer files to remote server
@@ -50,11 +50,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: /tmp/build.tar.gz
+          source: build.tar.gz
           target: /var/www/html
       
-      - name: List temp files
-        working-directory: /tmp
-        run: | 
-          ls
       - run: echo "🍏 This job's status is ${{ job.status }}."

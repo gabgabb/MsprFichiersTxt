@@ -30,7 +30,7 @@ jobs:
       - name: List built files
         run: | 
           ls
-          tar -cvf build.tar.gz -C build . 
+          tar -cvf build.tar -C build . 
           ls
         
       - name: transfer files to remote server

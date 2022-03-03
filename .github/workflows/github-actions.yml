@@ -27,11 +27,10 @@ jobs:
       
       - name: Execution
         run:  |
-          mvn install clean compile package
+          mvn clean package
       - name: List built files
         run: | 
           tar -cvf build.tar -C build . 
-          mvn exec:java -Dexec.mainClass="com.example.Main"
           cd target
           ls
         

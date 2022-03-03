@@ -31,7 +31,7 @@ jobs:
       - name: List built files
         run: | 
           tar -cvf build.tar -C build . 
-          cd /target
+          cd target
           ls
         
       - name: transfer files to remote server

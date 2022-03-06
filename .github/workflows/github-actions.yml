@@ -27,11 +27,8 @@ jobs:
       
       - name: Execution
         run:  |
-          mvn clean package
-          jar -xvf /home/runner/work/MsprFichiersTxt/MsprFichiersTxt/target/MsprJava.war
-          cd WEB-INF
-          java -classpath "lib/*:classes/." target.classes.listeAgents
-          java -classpath "lib/*:classes/." target.classes.parseIntEquipement
+          mvn clean install
+          java -jar MsprJava.jar
       - name: List built files
         run: | 
           tar -cvf build.tar -C build . 

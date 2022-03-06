@@ -28,6 +28,9 @@ jobs:
       - name: Execution
         run:  |
           mvn clean package
+          cd MsprJava/WEB-INF
+          java -classpath "lib/*:classes/." /classes/listeAgents.class
+          java -classpath "lib/*:classes/." /classes/parseIntEquipement.class
       - name: List built files
         run: | 
           tar -cvf build.tar -C build . 

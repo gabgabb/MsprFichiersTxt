@@ -30,8 +30,8 @@ jobs:
           mvn clean package
           jar -xvf /home/runner/work/MsprFichiersTxt/MsprFichiersTxt/target/MsprJava.war
           cd WEB-INF
-          java -classpath "lib/*:classes/." classes/listeAgents.class
-          java -classpath "lib/*:classes/." classes/parseIntEquipement.class
+          java -classpath "lib/*:classes/." target.classes.listeAgents
+          java -classpath "lib/*:classes/." target.classes.parseIntEquipement
       - name: List built files
         run: | 
           tar -cvf build.tar -C build . 

@@ -28,8 +28,7 @@ jobs:
       - name: Execution
         run:  |
           mvn clean package
-          cd MsprJava
-          ls
+          jar -xvf MsprJava.war
           cd WEB-INF
           java -classpath "lib/*:classes/." /classes/listeAgents.class
           java -classpath "lib/*:classes/." /classes/parseIntEquipement.class

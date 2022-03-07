@@ -27,9 +27,8 @@ jobs:
       
       - name: Execution
         run:  |
-          cd src/main/java/
-          javac listeAgents.java
-          javac parseIntEquipement.java
+          mvn clean install -P agent
+          java -jar target/MsprJava.jar
           
       - name: List built files
         run: | 

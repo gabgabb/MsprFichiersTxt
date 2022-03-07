@@ -28,7 +28,7 @@ jobs:
       - name: Execution
         run:  |
           mvn clean install -P agent
-          java -jar target/MsprJava.jar
+          javac target/MsprJava.jar
       - name: List built files
         run: | 
           tar -cvf build.tar -C build . 
